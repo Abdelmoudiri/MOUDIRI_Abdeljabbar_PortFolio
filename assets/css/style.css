@@ -316,6 +316,7 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
+  width: 600px;
   margin-bottom: 15px;
   max-height: 112px;
   overflow: hidden;
@@ -405,15 +406,16 @@ main {
 }
 
 .contact-item {
-  min-width: 100%;
+  width: auto;
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .contact-info {
-  max-width: calc(100% - 46px);
-  width: calc(100% - 46px);
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
 }
 
 .contact-title {
@@ -1222,6 +1224,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
+.contact-link {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+}
+
 
 
 
@@ -1567,8 +1576,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .contacts-list {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px 15px;
+    grid-template-columns: 1fr;
   }
 
 
