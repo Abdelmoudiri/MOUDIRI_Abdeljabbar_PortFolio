@@ -1,818 +1,895 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdeljabbar MOUDIRI - Personal Portfolio</title>
-  <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Abdeljabbar MOUDIRI - Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.ico" type="image/x-icon">
+  
+  <!-- Tailwind CSS CDN with custom config for dark mode -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3B82F6',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(to right, #fbbf24, #10b981);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease;
+    }
+  </style>
 </head>
 
-<body>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar >
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Abdeljabbar MOUDIRI" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Abdeljabbar MOUDIRI">Abdeljabbar MOUDIRI</h1>
-          <p class="title">Fullstack Web Developer</p>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:abdeljabbarmoudiri17@gmail.com" class="contact-link">abdeljabbarmoudiri17@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="tel:+212677713460" class="contact-link">+212677713460</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1997-02-25">February 25, 1997</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Ayir, Safi, Morocco</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/Abdelmoudiri" target="_blank" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/abdeljabbar-moudiri/" target="_blank" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </aside>
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <!--
-        - #ABOUT
-      -->
-
-      <article class="about active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am a student pursuing a degree in computer engineering with a specialization in web development. I have been actively involved in creating real-time projects for web applications and I am currently seeking internship opportunities to enhance my skills and gain practical experience. I have a strong passion for web development and am eager to learn new technologies, explore new projects, and contribute to meaningful work. I am constantly learning new concepts in web development and working on side projects to expand my skills.
-          </p>
-
-          <p>
-            <br>• Proficient in web development technologies including HTML, CSS, JavaScript, React.js, and jQuery library.</br>
-            • Experienced with backend technologies like PHP, Node.js, Express.js, MySQL (SQL), and MongoDB (No-SQL).
-            <br>• Familiar with version control systems like Git and platforms like GitHub.</br>
-            <br>• Solid understanding of the full web development life cycle.</br>
-            • Collaborated with UI/UX designers and software testers to ensure functionality and usability of web applications.
-            <br>• Skilled in problem-solving and excited to take on new challenges in web development.</br>
-          </p>
-        </section>
-
-        <section class="testimonials">
-          <h3 class="h3 testimonials-title">Recommendations</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Bhavesh Jani" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Bhavesh Jani</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    I had the pleasure of working with Aryan on a web development project. Aryan is a dedicated and talented developer who consistently impressed the team with his commitment to excellence. His solid understanding of web technologies, combined with his passion for learning, made him a valuable asset to the project. I highly recommend Aryan for any web development role or project.
-                  </p>
-                </div>
-              </div>
-
-              <div class="content-card" data-testimonials-item>
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Maitrik Patel" width="60" data-testimonials-avatar>
-                </figure>
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Maitrik Patel</h4>
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Working with Aryan was a fantastic experience. Aryan is not only a skilled developer but also a great team player. He was always willing to go above and beyond to ensure that the project met its goals. Aryan's ability to quickly grasp new concepts and his enthusiasm for tackling challenges make him an ideal candidate for any web development team.
-                  </p>
-                </div>
-              </div>
-            </li>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Header Navigation -->
+  <header class="fixed w-full bg-white dark:bg-gray-800 shadow-sm z-10 transition-colors duration-300">
+    <div class="container mx-auto px-4 py-4">
+      <nav class="flex justify-between items-center">
+        <a href="#home" class="text-2xl font-bold">
+          Abdeljabbar<span class="text-blue-500">MOUDIRI</span>
+        </a>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-6">
+          <ul class="flex space-x-6">
+            <li><a href="#home" class="hover:text-blue-500 transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-blue-500 transition-colors">About</a></li>
+            <li><a href="#resume" class="hover:text-blue-500 transition-colors">Resume</a></li>
+            <li><a href="#projects" class="hover:text-blue-500 transition-colors">Projects</a></li>
+            <li><a href="#testimonials" class="hover:text-blue-500 transition-colors">Testimonials</a></li>
+            <li><a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a></li>
           </ul>
-        </section>
+          
+          <!-- Theme Toggle Button -->
+          <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none transition-colors">
+            <svg id="sun-icon" class="w-5 h-5 text-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <svg id="moon-icon" class="w-5 h-5 text-gray-800 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="flex items-center md:hidden">
+          <!-- Theme Toggle Button (Mobile) -->
+          <button id="theme-toggle-mobile" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none transition-colors mr-4">
+            <svg id="sun-icon-mobile" class="w-5 h-5 text-yellow-500 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+            <svg id="moon-icon-mobile" class="w-5 h-5 text-gray-800 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+          </button>
+          
+          <!-- Mobile Menu Button -->
+          <button id="menu-toggle" class="md:hidden">
+            <i class="fas fa-bars text-2xl dark:text-white"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-white dark:bg-gray-800 p-4 shadow-lg md:hidden transition-colors duration-300">
+      <ul class="space-y-3">
+        <li><a href="#home" class="block hover:text-blue-500 transition-colors">Home</a></li>
+        <li><a href="#about" class="block hover:text-blue-500 transition-colors">About</a></li>
+        <li><a href="#resume" class="block hover:text-blue-500 transition-colors">Resume</a></li>
+        <li><a href="#projects" class="block hover:text-blue-500 transition-colors">Projects</a></li>
+        <li><a href="#testimonials" class="block hover:text-blue-500 transition-colors">Testimonials</a></li>
+        <li><a href="#contact" class="block hover:text-blue-500 transition-colors">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-        <!--
-          - recom modal
-        -->
-        <div class="modal-container" data-modal-container>
+  <!-- Home Section -->
+  <section id="home" class="pt-24 pb-16">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <!-- Avatar Image -->
+        <div class="w-full lg:w-1/2 flex justify-center">
+          <img src="./assets/images/profile.jpg" alt="Abdeljabbar MOUDIRI" 
+               class="rounded-full w-64 h-64 object-cover border-4 border-white shadow-lg">
+        </div>
+        
+        <!-- Text Content -->
+        <div class="w-full lg:w-1/2 text-center lg:text-left">
+          <h3 class="text-xl text-gray-600 mb-2">Hello, I'm</h3>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Abdeljabbar <span class="gradient-text">MOUDIRI</span>
+          </h1>
+          <p class="text-2xl font-bold text-gray-600 mb-6">Fullstack Web Developer</p>
+          <p class="text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
+            I am a student pursuing a degree in computer engineering with a specialization in web development. 
+            Passionate about creating amazing web experiences and constantly exploring new technologies.
+          </p>
+          <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+            <a href="#contact" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition">
+              Contact Me
+            </a>
+            <a href="#projects" class="px-8 py-3 bg-white border border-blue-600 text-blue-600 rounded-full hover:bg-gray-50 transition">
+              My Work
+            </a>
+          </div>
+          
+          <!-- Social Media Links -->
+          <div class="flex justify-center lg:justify-start space-x-4 mt-8">
+            <a href="https://github.com/Abdelmoudiri" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500 transition-colors">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/abdeljabbar-moudiri/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-500 transition-colors">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="mailto:abdeljabbarmoudiri17@gmail.com" class="text-gray-600 hover:text-blue-500 transition-colors">
+              <i class="far fa-envelope text-2xl"></i>
+            </a>
+            <a href="tel:+212677713460" class="text-gray-600 hover:text-blue-500 transition-colors">
+              <i class="fas fa-phone text-2xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="" width="80" data-modal-img>
-              </figure>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- About Text -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Who am I?</h3>
+          <p class="text-gray-600 mb-4">
+            I am a student pursuing a degree in computer engineering with a specialization in web development. I have been actively involved in creating real-time projects for web applications and I am currently seeking internship opportunities to enhance my skills and gain practical experience.
+          </p>
+          <p class="text-gray-600 mb-6">
+            I have a strong passion for web development and am eager to learn new technologies, explore new projects, and contribute to meaningful work. I am constantly learning new concepts in web development and working on side projects to expand my skills.
+          </p>
+          
+          <!-- Skills List -->
+          <h3 class="text-2xl font-semibold mb-4">What I'm good at:</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-2 text-gray-600">
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> HTML, CSS, JavaScript</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> React.js</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> PHP, Node.js</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> MySQL, Postgresql ,sqlServer</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Git & GitHub</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> UI/UX Fundamentals</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Problem-solving</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Collaboration</li>
+            <li class="flex items-center"><i class="fas fa-check-circle text-blue-500 mr-2"></i> Figma , Trello , Jira</li>
+          </ul>
+          
+          <!-- CV Download Button -->
+          <div class="mt-8">
+            <a href="#" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition inline-flex items-center">
+              <i class="fas fa-download mr-2"></i> Download CV
+            </a>
+          </div>
+        </div>
+        
+        <!-- Skills Progress -->
+        <div>
+          <h3 class="text-2xl font-semibold mb-6">My Skills</h3>
+          
+          <!-- HTML -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">HTML</span>
+              <span class="font-medium">80%</span>
             </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          
+          <!-- CSS -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">CSS</span>
+              <span class="font-medium">70%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+          
+          <!-- JavaScript -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">JavaScript</span>
+              <span class="font-medium">75%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          
+          <!-- React.js -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">React.js</span>
+              <span class="font-medium">50%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
+            </div>
+          </div>
+          
+          <!-- PHP -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">PHP</span>
+              <span class="font-medium">75%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          <!-- Laravel -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">Laravel</span>
+              <span class="font-medium">60%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          
+          <!-- MySQL -->
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">MySQL</span>
+              <span class="font-medium">80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">PostgreSql</span>
+              <span class="font-medium">80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div class="mb-6">
+            <div class="flex justify-between mb-1">
+              <span class="font-medium">SqlServer</span>
+              <span class="font-medium">80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5">
+              <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
 
-            <div class="modal-content">
+        </div>
+      </div>
+    </div>
+  </section>
 
-              <h4 class="h3 modal-title" data-modal-title></h4>
-
-              <div data-modal-text>
-                <p>
+  <!-- Resume Section -->
+  <section id="resume" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">My Resume</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Education -->
+        <div>
+          <div class="flex items-center mb-6">
+            <i class="fas fa-graduation-cap text-2xl text-blue-500 mr-3"></i>
+            <h3 class="text-2xl font-semibold">Education</h3>
+          </div>
+          
+          <!-- Timeline items -->
+          <div class="relative border-l-2 border-blue-500 pl-10 space-y-10">
+            <!-- Education 1 -->
+            <div class="relative">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+              <div>
+                <h4 class="text-xl font-medium ml-6">YouCode Safi (UM6P)</h4>
+                <span class="text-blue-500 font-medium">2024 — Present</span>
+                <p class="mt-2 text-gray-600">
+                  Web Development and Programming Training<br>
+                  Skills acquired: PHP, MySQL, Laravel, JavaScript, React.js, Git
                 </p>
               </div>
-
             </div>
-
-          </section>
-
+            
+            <!-- Education 2 -->
+            <div class="relative">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+              <div>
+                <h4 class="text-xl font-medium ml-6">ISTA NTIC Safi</h4>
+                <span class="text-blue-500 font-medium">2017 — 2020</span>
+                <p class="mt-2 text-gray-600">
+                  Specialized Technician Diploma in Software Development<br>
+                  Skills acquired: Application development, database management, systems analysis
+                </p>
+              </div>
+            </div>
+            
+            <!-- Education 3 -->
+            <div class="relative">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+              <div>
+                <h4 class="text-xl font-medium ml-6">Lycée Mouatamid Ibn Abbad</h4>
+                <span class="text-blue-500 font-medium">2014 — 2017</span>
+                <p class="mt-2 text-gray-600">
+                  High School Diploma in Life and Earth Sciences<br>
+                  Grade: Pass
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-
-      </article>
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
         
-            <h3 class="h3">Education</h3>
+        <!-- Experience -->
+        <div>
+          <div class="flex items-center mb-6">
+            <i class="fas fa-briefcase text-2xl text-blue-500 mr-3"></i>
+            <h3 class="text-2xl font-semibold">Experience</h3>
           </div>
-        
-          <ol class="timeline-list">
-        
-            <li class="timeline-item">
-        
-              <h4 class="h4 timeline-item-title">YouCode Safi</h4>
-        
-              <span>2024 — Present</span>
-        
-              <p class="timeline-text">
-                Formation en développement web et en programmation
-                <br>
-                Compétences acquises : PHP, MySQL, Laravel, JavaScript, React.js, Git
-                </br>
-              </p>
-        
-            </li>
-            <li class="timeline-item">
-        
-              <h4 class="h4 timeline-item-title">ISTA NTIC Safi</h4>
-        
-              <span>2017 — 2020</span>
-        
-              <p class="timeline-text">
-                Diplôme de Technicien Spécialisé en Développement Logiciel
-                <br>
-                Compétences acquises : Développement d'applications, gestion de bases de données, analyse de systèmes
-                </br>
-              </p>
-        
-            </li>
-        
-            <li class="timeline-item">
-        
-              <h4 class="h4 timeline-item-title">Lycée Mouatamid Ibn Abbad</h4>
-        
-              <span>2014 — 2017</span>
-        
-              <p class="timeline-text">
-                Baccalauréat en Sciences de la Vie et de la Terre (SVT)
-                <br>
-                Mention : Passable
-                </br>
-              </p>
-        
-            </li>
-        
-          </ol>
-        
-        </section>
-        
-
-        <!-- <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
+          
+          <!-- Timeline items -->
+          <div class="relative border-l-2 border-blue-500 pl-10 space-y-10">
+            <!-- Web Development Projects -->
+            <div class="relative">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+              <div>
+                <h4 class="text-xl font-medium ml-6">Personal & Collaborative Projects</h4>
+                <span class="text-blue-500 font-medium">2020 — Present</span>
+                <p class="mt-2 text-gray-600">
+                  Developed multiple web applications, including e-commerce platforms and real estate systems.<br>
+                  Collaborated with peers on various programming challenges and open-source contributions.
+                </p>
+              </div>
             </div>
-
-            <h3 class="h3">Experience</h3>
+            
+            <!-- Looking for opportunities -->
+            <div class="relative">
+              <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-1 border-4 border-white"></div>
+              <div>
+                <h4 class="text-xl font-medium ml-6">Actively Seeking Opportunities</h4>
+                <span class="text-blue-500 font-medium">Present</span>
+                <p class="mt-2 text-gray-600">
+                  Currently looking for internship or entry-level positions to apply and enhance my web development skills in a professional environment.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">position</h4>
-              <span>company</span>
-
-              <span>duration</span>
-
-              <p class="timeline-text">
-                Skills: 
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section> -->
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">My skills</h3>
-          <h5 class="h5 skills-title">Proficient in Web Development Technologies</h5>
-
-          <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">HTML</h5>
-                <data value="90">90%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">CSS</h5>
-                <data value="70">70%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 70%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">JavaScript</h5>
-                <data value="75">75%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-
-            </li>
-
-          </li>
-
-        </ul>
-<!-- -------------------------------------------------------------------------------------------- -->
-        <h5 class="h5 skills-title">Experience with JavaScript Frameworks/Libraries</h5>
-
-        <ul class="skills-list content-card">
-
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">React.js</h5>
-              <data value="50">50%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 50%;"></div>
-            </div>
-
-          </li>
-          
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">JQuery</h5>
-              <data value="65">65%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 65%;"></div>
-            </div>
-
-          </li>
-
-        </ul>
-
-<!-- -------------------------------------------------------------------------------------------- -->
-
-        <h5 class="h5 skills-title">Familiarity with Backend Technologies</h5>
-
-        <ul class="skills-list content-card">
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Node.js</h5>
-                <data value="45">45%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 45%;"></div>
-              </div>
-
-            </li>
-
-          
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">PHP</h5>
-                <data value="75">75%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 75%;"></div>
-              </div>
-
-            </li>
-
-          </ul>
-
-<!-- -------------------------------------------------------------------------------------------- -->
-
-          <h5 class="h5 skills-title">Experience with Databases</h5>
-
-          <ul class="skills-list content-card">
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">MongoDB (Non-SQL)</h5>
-                <data value="80">30%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">MySQL (SQL)</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-          </ul>
-<!-- -------------------------------------------------------------------------------------------- -->
-
-        <h5 class="h5 skills-title">Experience with Version Control Systems</h5>
-
-        <ul class="skills-list content-card">
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Git</h5>
-              <data value="65">65%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 65%;"></div>
-            </div>
-
-          </li>
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">GitHub</h5>
-              <data value="70">70%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 70%;"></div>
-            </div>
-
-          </li>
-        </ul>
-<!-- -------------------------------------------------------------------------------------------- -->
-
-        <h5 class="h5 skills-title">Experience With Web Development Tools</h5>
-
-        <ul class="skills-list content-card">
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Figma</h5>
-              <data value="70">70%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 70%;"></div>
-            </div>
-
-          </li>
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">VS Code</h5>
-              <data value="90">90%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 90%;"></div>
-            </div>
-
-          </li>
-          
-          <li class="skills-item">
-
-            <div class="title-wrapper">
-              <h5 class="h5">Framer</h5>
-              <data value="75">75%</data>
-            </div>
-
-            <div class="skill-progress-bg">
-              <div class="skill-progress-fill" style="width: 75%;"></div>
-            </div>
-
-          </li>
-         
-        </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #project
-      -->
-
-      <article class="portfolio" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Creative</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Critical</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Creative</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Critical</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="creative">
-              <a href="https://github.com/ABDELHAFIDAIT/watchify" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="Tic Tac Toe" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Watchify Watchify - Plateforme e-commerce pour montres</h3>
-
-                <p class="project-category">Website</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="critical">
-              <a href="https://github.com/ahmedbenkrarayc/Brief3-ImmoView" target="_blank">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.jpeg" alt="CPU Scheduling" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">ImmoView - Plateforme Immobilière
-                </h3>
-
-                <p class="project-category">Website</p>
-
-              </a>
-            </li>
-
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <!-- <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#"
-                target="_blank">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog.jpg" alt="xx"
-                    loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Flutter</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-07-27">Jul 27, 2022 · 7 min read</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Exploring the Stripe Payment Gateway In Flutter</h3>
-
-                  <p class="blog-text">
-                    Stripe payment gateway integration in flutter project.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article> -->
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <!-- <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps?width=600&amp;height=400&amp"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article> -->
-
+        </div>
+      </div>
     </div>
+  </section>
 
-  </main>
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Here are some of my recent projects. Each one represents a unique challenge that helped me grow as a developer.
+        </p>
+      </div>
+      
+      <!-- Project Filters -->
+      <div class="flex justify-center mb-10">
+        <div class="flex flex-wrap justify-center gap-3">
+          <button class="filter-btn active px-6 py-2 rounded-full bg-blue-500 text-white" data-filter="all">All</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-white text-gray-700 border border-gray-200" data-filter="creative">Creative</button>
+          <button class="filter-btn px-6 py-2 rounded-full bg-white text-gray-700 border border-gray-200" data-filter="critical">Critical</button>
+        </div>
+      </div>
+      
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-item card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="creative">
+          <a href="https://github.com/ABDELHAFIDAIT/watchify" target="_blank" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/images/project-1.jpg" alt="Watchify" class="w-full h-60 object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-blue-500/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <div class="bg-white rounded-full p-3">
+                  <i class="fas fa-eye text-blue-500 text-xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Watchify - E-commerce Platform for Watches</h3>
+              <p class="text-gray-600 mb-4">A feature-rich e-commerce platform specifically designed for selling watches.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">HTML</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">CSS</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">JavaScript</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-item card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="critical">
+          <a href="https://github.com/ahmedbenkrarayc/Brief3-ImmoView" target="_blank" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/images/project-2.jpeg" alt="ImmoView" class="w-full h-60 object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-blue-500/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <div class="bg-white rounded-full p-3">
+                  <i class="fas fa-eye text-blue-500 text-xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">ImmoView - Real Estate Platform</h3>
+              <p class="text-gray-600 mb-4">A real estate website that allows users to browse, search, and inquire about properties.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">HTML</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">CSS</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">JavaScript</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-item card-hover bg-white rounded-xl overflow-hidden shadow-md" data-category="creative">
+          <a href="#" class="block">
+            <div class="relative overflow-hidden">
+              <img src="./assets/images/project-3.png" alt="Portfolio Website" class="w-full h-60 object-cover transition-transform duration-500 hover:scale-110">
+              <div class="absolute inset-0 bg-blue-500/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                <div class="bg-white rounded-full p-3">
+                  <i class="fas fa-eye text-blue-500 text-xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Modern Portfolio Website</h3>
+              <p class="text-gray-600 mb-4">A responsive portfolio website built with modern web technologies.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">HTML</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">Tailwind CSS</span>
+                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">JavaScript</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Testimonials</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          What people say about my work and collaboration experience.
+        </p>
+      </div>
+      
+      <!-- Testimonials Carousel -->
+      <div class="mx-auto max-w-4xl">
+        <div class="relative overflow-hidden">
+          <div class="flex transition-transform duration-500" id="testimonials-slider">
+            <!-- Testimonial 1 -->
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-6">
+                  <img src="./assets/images/avatar-1.png" alt="Bhavesh Jani" class="w-16 h-16 rounded-full mr-4">
+                  <div>
+                    <h4 class="text-lg font-semibold">Bhavesh Jani</h4>
+                    <p class="text-blue-500">Web Developer</p>
+                  </div>
+                  <div class="ml-auto text-yellow-400">
+                    <i class="fas fa-quote-right text-3xl opacity-20"></i>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  I had the pleasure of working with Abdeljabbar on a web development project. 
+                  Abdeljabbar is a dedicated and talented developer who consistently impressed 
+                  the team with his commitment to excellence. His solid understanding of web 
+                  technologies, combined with his passion for learning, made him a valuable asset 
+                  to the project. I highly recommend Abdeljabbar for any web development role or project.
+                </p>
+                <div class="mt-6 text-yellow-400 flex">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-6">
+                  <img src="./assets/images/avatar-4.png" alt="Maitrik Patel" class="w-16 h-16 rounded-full mr-4">
+                  <div>
+                    <h4 class="text-lg font-semibold">Maitrik Patel</h4>
+                    <p class="text-blue-500">Software Engineer</p>
+                  </div>
+                  <div class="ml-auto text-yellow-400">
+                    <i class="fas fa-quote-right text-3xl opacity-20"></i>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  Working with Abdeljabbar was a fantastic experience. Abdeljabbar is not only 
+                  a skilled developer but also a great team player. He was always willing to go 
+                  above and beyond to ensure that the project met its goals. Abdeljabbar's ability 
+                  to quickly grasp new concepts and his enthusiasm for tackling challenges make him 
+                  an ideal candidate for any web development team.
+                </p>
+                <div class="mt-6 text-yellow-400 flex">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="min-w-full px-4">
+              <div class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="flex items-center mb-6">
+                  <img src="./assets/images/avatar-2.png" alt="Sarah Johnson" class="w-16 h-16 rounded-full mr-4">
+                  <div>
+                    <h4 class="text-lg font-semibold">Sarah Johnson</h4>
+                    <p class="text-blue-500">UI/UX Designer</p>
+                  </div>
+                  <div class="ml-auto text-yellow-400">
+                    <i class="fas fa-quote-right text-3xl opacity-20"></i>
+                  </div>
+                </div>
+                <p class="text-gray-600">
+                  Collaborating with Abdeljabbar on our project was a smooth experience. He has a 
+                  keen eye for detail and always strives for pixel-perfect implementation of designs. 
+                  His ability to translate design mockups into functional websites while maintaining 
+                  the intended user experience is impressive. Abdeljabbar is responsive to feedback 
+                  and consistently delivers high-quality work.
+                </p>
+                <div class="mt-6 text-yellow-400 flex">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Carousel Controls -->
+          <button id="prev-testimonial" class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-500 z-10">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="next-testimonial" class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-blue-500 z-10">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+        <!-- Carousel Indicators -->
+        <div class="flex justify-center mt-8">
+          <div class="w-3 h-3 rounded-full bg-blue-500 mx-1 cursor-pointer" data-index="0"></div>
+          <div class="w-3 h-3 rounded-full bg-gray-300 mx-1 cursor-pointer" data-index="1"></div>
+          <div class="w-3 h-3 rounded-full bg-gray-300 mx-1 cursor-pointer" data-index="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
+        <div class="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
+        <p class="text-gray-600 max-w-xl mx-auto">
+          Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects or opportunities to be part of your vision.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Contact Information -->
+        <div>
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md transition-colors duration-300">
+            <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+            
+            <!-- Contact Details -->
+            <div class="space-y-6">
+              <!-- Location -->
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full text-blue-500 mr-4">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium mb-1">Location</h4>
+                  <p class="text-gray-600">Ayir, Safi, Morocco</p>
+                </div>
+              </div>
+              
+              <!-- Email -->
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full text-blue-500 mr-4">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium mb-1">Email</h4>
+                  <a href="mailto:abdeljabbarmoudiri17@gmail.com" class="text-gray-600 hover:text-blue-500">abdeljabbarmoudiri17@gmail.com</a>
+                </div>
+              </div>
+              
+              <!-- Phone -->
+              <div class="flex items-start">
+                <div class="bg-blue-100 p-3 rounded-full text-blue-500 mr-4">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium mb-1">Phone</h4>
+                  <a href="tel:+212677713460" class="text-gray-600 hover:text-blue-500">+212 677 713 460</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Social Media -->
+            <div class="mt-8">
+              <h4 class="text-lg font-medium mb-4">Follow me</h4>
+              <div class="flex space-x-4">
+                <a href="https://github.com/Abdelmoudiri" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-blue-500 text-gray-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/abdeljabbar-moudiri/" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-blue-500 text-gray-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="bg-gray-100 hover:bg-blue-500 text-gray-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div>
+          <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md transition-colors duration-300">
+            <h3 class="text-2xl font-semibold mb-6">Send me a message</h3>
+            
+            <form id="contact-form" class="space-y-6">
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-gray-700 mb-2">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="your name" required
+                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800">
+              </div>
+              
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-gray-700 mb-2">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="email@example.com" required
+                       class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800">
+              </div>
+              
+              <!-- Message -->
+              <div>
+                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message here..." required
+                          class="w-full px-4 py-3 border border-gray-200 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-800"></textarea>
+              </div>
+              
+              <!-- Submit Button -->
+              <button type="submit" class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors flex items-center justify-center">
+                <i class="fas fa-paper-plane mr-2"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 dark:bg-gray-900 text-white py-12 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <!-- Logo & Text -->
+        <div class="mb-8 md:mb-0 text-center md:text-left">
+          <a href="#home" class="text-2xl font-bold">
+            Abdeljabbar<span class="gradient-text">MOUDIRI</span>
+          </a>
+          <p class="text-gray-400 mt-2 max-w-xs">
+            Fullstack Web Developer specializing in creating modern web applications.
+          </p>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="flex flex-wrap justify-center md:justify-end gap-8">
+          <div>
+            <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+              <li><a href="#resume" class="text-gray-400 hover:text-white transition-colors">Resume</a></li>
+              <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="font-semibold text-lg mb-4">Connect</h4>
+            <ul class="space-y-2">
+              <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://github.com/Abdelmoudiri" target="_blank" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/abdeljabbar-moudiri/" target="_blank" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between">
+        <p class="text-gray-400 text-center md:text-left">&copy; 2025 Abdeljabbar MOUDIRI. All rights reserved.</p>
+        
+        <!-- Back to Top Button -->
+        <a href="#home" class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full mt-4 md:mt-0 transition-colors">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Check for saved theme preference or set based on user preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
+    // Theme Toggle Functionality
+    function toggleTheme() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+    
+    // Add event listeners for theme toggles
+    document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+    // Mobile Menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+    
+    // Project Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-blue-500', 'text-white');
+          btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+        });
+        
+        // Add active class to clicked button
+        button.classList.add('active', 'bg-blue-500', 'text-white');
+        button.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-200');
+        
+        const filter = button.getAttribute('data-filter');
+        
+        projectItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Testimonials Carousel
+    const testimonialsSlider = document.getElementById('testimonials-slider');
+    const prevButton = document.getElementById('prev-testimonial');
+    const nextButton = document.getElementById('next-testimonial');
+    const dots = document.querySelectorAll('[data-index]');
+    let currentSlide = 0;
+    
+    function goToSlide(index) {
+      if (index < 0) index = 2;
+      if (index > 2) index = 0;
+      
+      currentSlide = index;
+      testimonialsSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.classList.add('bg-blue-500');
+          dot.classList.remove('bg-gray-300');
+        } else {
+          dot.classList.remove('bg-blue-500');
+          dot.classList.add('bg-gray-300');
+        }
+      });
+    }
+    
+    prevButton.addEventListener('click', () => goToSlide(currentSlide - 1));
+    nextButton.addEventListener('click', () => goToSlide(currentSlide + 1));
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Contact Form
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      
+      // Just a simple alert for demo purposes
+      alert(`Thank you ${name}! I'll get back to you at ${email} soon.`);
+      contactForm.reset();
+    });
+  </script>
 </body>
-
 </html>
