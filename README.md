@@ -30,7 +30,6 @@ Ce dépôt contient le code source de mon portfolio personnel, conçu pour prés
 │   ├── js/
 │   └── images/
 ├── index.html
-├── contact.html
 ├── README.md
 └── LICENSE
 ```
