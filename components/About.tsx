@@ -76,7 +76,7 @@ export default function About() {
             </span>
           </h2>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Développeur Full Stack passionné par la création d'applications web performantes et évolutives. 
+            Développeur Full Stack passionné par la création d&apos;applications web performantes et évolutives. 
             Spécialisé dans les architectures robustes et les expériences utilisateur immersives.
           </p>
         </motion.div>
@@ -117,7 +117,7 @@ export default function About() {
               </div>
             </div>
             <p className="text-slate-300 leading-relaxed mb-6">
-              Diplômé de YouCode, l'école d'excellence de l'Université Mohammed VI Polytechnique. 
+              Diplômé de YouCode, l&apos;école d&apos;excellence de l&apos;Université Mohammed VI Polytechnique. 
               Formation intensive en développement Full Stack avec focus sur les bonnes pratiques 
               et les technologies modernes.
             </p>
@@ -146,7 +146,7 @@ export default function About() {
             <ul className="space-y-2 text-slate-300">
               <li className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-1">▹</span>
-                <span>Applications d'entreprise (ERP, SaaS)</span>
+                <span>Applications d&apos;entreprise (ERP, SaaS)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-1">▹</span>
@@ -170,7 +170,7 @@ export default function About() {
             </h3>
             <p className="text-slate-300 leading-relaxed">
               Code propre, architectures scalables, et expérience utilisateur optimale. 
-              Passionné par l'apprentissage continu et les nouvelles technologies.
+              Passionné par l&apos;apprentissage continu et les nouvelles technologies.
             </p>
           </Card>
         </div>
