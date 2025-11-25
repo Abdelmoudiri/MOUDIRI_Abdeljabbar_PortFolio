@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
-        <script src="https://cdn.tailwindcss.com" suppressHydrationWarning></script>
+        <script src="https://cdn.tailwindcss.com" async suppressHydrationWarning></script>
         <script suppressHydrationWarning dangerouslySetInnerHTML={{
           __html: `
             tailwind.config = {
