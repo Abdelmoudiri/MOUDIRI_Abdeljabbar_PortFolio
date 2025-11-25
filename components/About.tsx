@@ -91,7 +91,7 @@ export default function About() {
         >
           <div className="glass rounded-2xl p-8 text-center border-l-4 border-cyan-400 hover:border-cyan-300 transition-colors">
             <div className="text-5xl font-black text-cyan-400 mb-2">{counts.years}+</div>
-            <div className="text-slate-400">Années d'expérience</div>
+            <div className="text-slate-400">Années d&apos;expérience</div>
           </div>
           <div className="glass rounded-2xl p-8 text-center border-l-4 border-blue-400 hover:border-blue-300 transition-colors">
             <div className="text-5xl font-black text-blue-400 mb-2">{counts.projects}+</div>
