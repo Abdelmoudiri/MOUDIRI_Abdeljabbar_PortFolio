@@ -119,7 +119,7 @@ export default function Hero() {
             <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
           </Button>
           
-          <Button variant="secondary" size="lg" onClick={() => window.open('/Abdeljabbar%20MOUDIRI%20CV%20fr%20(1).pdf', '_blank')}>
+          <Button variant="secondary" size="lg" onClick={() => window.open('/java%20Abdeljabbar%20MOUDIRI%20CV%20fr.pdf', '_blank')}>
             <Download size={20} />
             Télécharger CV
           </Button>
