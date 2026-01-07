@@ -6,30 +6,28 @@ import Card from './ui/Card'
 import { useEffect, useState } from 'react'
 
 export default function About() {
-  const [counts, setCounts] = useState({ years: 0, projects: 0, technologies: 0 })
+  const [counts, setCounts] = useState({ months: 0, projects: 0, technologies: 0 })
 
   useEffect(() => {
-    const targets = { years: 3, projects: 15, technologies: 25 }
+    const targets = { months: 3, projects: 25, technologies: 25 }
     const duration = 2000
     const steps = 60
     const interval = duration / steps
 
-    let current = { years: 0, projects: 0, technologies: 0 }
+    let current = { months: 0, projects: 0, technologies: 0 }
     const timer = setInterval(() => {
       current = {
-        years: Math.min(current.years + targets.years / steps, targets.years),
+        months: Math.min(current.months + targets.months / steps, targets.months),
         projects: Math.min(current.projects + targets.projects / steps, targets.projects),
         technologies: Math.min(current.technologies + targets.technologies / steps, targets.technologies)
       }
       setCounts({
-        years: Math.floor(current.years),
+        months: Math.floor(current.months),
         projects: Math.floor(current.projects),
         technologies: Math.floor(current.technologies)
       })
-      
-      if (current.years >= targets.years) clearInterval(timer)
+      if (current.months >= targets.months) clearInterval(timer)
     }, interval)
-
     return () => clearInterval(timer)
   }, [])
 
@@ -43,7 +41,10 @@ export default function About() {
     backend: [
       { name: 'Java / Spring Boot', level: 92 },
       { name: 'Node.js', level: 80 },
-      { name: 'PHP / Symfony', level: 85 },
+      { name: 'PHP', level: 85 },
+      { name: 'Symfony', level: 80 },
+      { name: 'Laravel', level: 80 },
+      { name: 'C', level: 75 },
       { name: 'REST / GraphQL APIs', level: 88 }
     ],
     database: [
@@ -90,8 +91,8 @@ export default function About() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
           <div className="glass rounded-2xl p-8 text-center border-l-4 border-cyan-400 hover:border-cyan-300 transition-colors">
-            <div className="text-5xl font-black text-cyan-400 mb-2">{counts.years}+</div>
-            <div className="text-slate-400">Années d&apos;expérience</div>
+            <div className="text-5xl font-black text-cyan-400 mb-2">{counts.months}+</div>
+            <div className="text-slate-400">Mois d&apos;expérience professionnelle</div>
           </div>
           <div className="glass rounded-2xl p-8 text-center border-l-4 border-blue-400 hover:border-blue-300 transition-colors">
             <div className="text-5xl font-black text-blue-400 mb-2">{counts.projects}+</div>
@@ -113,13 +114,20 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-2">Formation</h3>
-                <p className="text-cyan-400 font-semibold text-lg">YouCode (UM6P)</p>
+                <p className="text-cyan-400 font-semibold text-lg">YouCode (UM6P) <span className="text-slate-400 text-base font-normal">2024 – 2026</span></p>
               </div>
             </div>
             <p className="text-slate-300 leading-relaxed mb-6">
-              Diplômé de YouCode, l&apos;école d&apos;excellence de l&apos;Université Mohammed VI Polytechnique. 
+              Formation de YouCode, l&apos;école d&apos;excellence de l&apos;Université Mohammed VI Polytechnique. 
               Formation intensive en développement Full Stack avec focus sur les bonnes pratiques 
               et les technologies modernes.
+              <br />
+              <span className="block mt-4 font-semibold text-cyan-300">À propos de YouCode</span>
+              <span className="block text-slate-300">
+                YouCode est une école inclusive et innovante, accessible à tous sans barrière de diplôme ou de niveau. Fondée par le groupe OCP, en partenariat avec Simplon.co et l'Université Mohammed VI Polytechnique (UM6P), YouCode propose une formation 100% gratuite, intensive et axée sur la pratique, avec une pédagogie basée sur les projets et les technologies les plus demandées du marché. L'objectif est de mettre le code entre toutes les mains, réduire les inégalités numériques et révéler les talents. Les apprenants évoluent dans un environnement moderne, collaboratif et bienveillant, propice à l'apprentissage et à la réussite professionnelle.
+              </span>
+              <span className="block mt-4 font-semibold text-cyan-300">ISTA NTIC Safi (2018 – 2020)</span>
+              <span className="block text-slate-300">Technicien Spécialisé en Développement Informatique</span>
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-slate-300">

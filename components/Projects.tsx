@@ -12,12 +12,13 @@ export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<string>('all')
+  const [visibleCount, setVisibleCount] = useState(10)
 
   useEffect(() => {
     async function loadProjects() {
       try {
         const repos = await fetchGitHubRepos()
-        setProjects(repos.slice(0, 6))
+        setProjects(repos)
       } catch (error) {
         console.error('Failed to load projects:', error)
       } finally {
@@ -30,6 +31,7 @@ export default function Projects() {
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(p => p.language?.toLowerCase() === filter.toLowerCase())
+  const visibleProjects = filteredProjects.slice(0, visibleCount)
 
   const languages = Array.from(new Set(projects.map(p => p.language).filter(Boolean)))
 
@@ -107,7 +109,7 @@ export default function Projects() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             layout
           >
-            {filteredProjects.map((project, index) => (
+            {visibleProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
@@ -204,7 +206,7 @@ export default function Projects() {
         )}
 
         {/* View More Button */}
-        {!loading && (
+        {!loading && visibleCount < filteredProjects.length && (
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -214,12 +216,10 @@ export default function Projects() {
             <Button
               variant="secondary"
               size="lg"
-              onClick={() => window.open('https://github.com/Abdelmoudiri', '_blank')}
+              onClick={() => setVisibleCount((prev) => prev + 10)}
               className="group"
             >
-              <Github size={20} />
-              <span>Voir tous mes projets</span>
-              <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span>Afficher plus</span>
             </Button>
           </motion.div>
         )}
